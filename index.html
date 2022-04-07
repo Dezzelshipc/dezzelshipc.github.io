@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head onload="cacheUpdate()">
+    <meta charset="UTF-8">
+    <title>Начальная страница</title>
+
+    <link type="image/x-icon" rel="shortcut icon" href="/source/favicons/clover.ico">
+    <link type="image/png" sizes="128x128" rel="icon" href="/source/favicons/clover-128.png">
+
+    <link rel="stylesheet" href="/global.css" />
+    <script src="/script.js"></script>
+</head>
+<body>
+    <div class="frame">
+        <h1>Добро пожаловать на тестовый сайт!</h1>
+        <div>Здесь вы сможете увидеть картинки, отправить почту, зайти в мой профиль стима, посмотреть одни из моих любимых и ожидаемых игр, и узнать, что домен «.ml» принадлежит африканской стране <a class="alink" href="https://ru.wikipedia.org/wiki/Мали">Мали</a>.</div>
+        <br>
+        <button class="button" id="button" onclick="image1()">Включить картинку</button>
+        <a href="/lucky"><button class="button">Мне повезёт!</button></a>
+        <button class="button" id="smesh" onclick="smesh1()">Я уже смешарик!</button>
+        <br>
+        <input class="text" placeholder="Как тебя зовут?" type="text" />
+        <div id="text2"></div>
+        <img class="img" id="img" src="/source/open_img.png"/>
+        <br>
+        <table class="tablelinks">
+            <tr>
+                <td title="Мои игры">
+                    <a href="/games">
+                        <img class="links" src="/source/Controller.svg" width="50" height="50" />
+                    </a>
+                </td>
+                <td title="Почта">
+                    <a href="mailto:derzhapolskii.yv@students.dvfu.ru">
+                        <img class="links" src="/source/Конвертик.svg" width="50" height="50" />
+                    </a>
+                </td>
+                <td title="Стим">
+                    <a href="https://steamcommunity.com/id/dezzelshipc/">
+                        <img class="links" src="/source/Steam_icon_logo.svg" width="50" height="50" />
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="corner">Держапольский Юрий 2022</div>
+</body>
+
+</html>
