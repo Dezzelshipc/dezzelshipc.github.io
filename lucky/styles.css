@@ -1,7 +1,0 @@
-.arrowcircle {
-    transition: 1s;
-}
-
-.arrowcircle:hover {
-    transform: rotateZ(360deg) scale(1.1, 1.1);
-}
