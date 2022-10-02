@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Suez+One&display=swap');
+
+:root {
+    font-family: Trebuchet MS, Helvetica;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(29, 32, 33);
+}
+
+#up {
+    background-image: url(../images/BlueBack.jpeg);
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: #7e8b96;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    justify-items: center;
+    padding-top: 15%;
+    color:azure;
+
+    font-size: 1.5rem;
+}
+
+header {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    margin: 0px;
+    padding: .50rem 2rem;
+    width: fit-content;
+    gap: 20px;
+    margin: auto;
+    left: 0px;
+    right: 0px;
+
+    border-top: 0;
+    border-radius: 0 0 10px 10px;
+    
+    transition: all .4s ease;
+}
+
+header.fixed {
+    z-index: 100;
+    position: fixed;
+    background: rgba(93, 133, 151, 0.9);
+}
+
+header img {
+    width: 75px;
+    height: 75px;
+    border: solid 1px black;
+    border-radius: 100%;
+    transition: transform .2s ease;
+}
+
+header img:hover  {
+    transform: scale(1.2) translateY(3px);
+}
+
+header .img {
+    filter: invert(1);
+    border: solid 1px white;
+    border-radius: 100%;
+    background-color: black;
+}
+
+header a {
+    font-size: 2rem;
+    color: whitesmoke;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 1rem;
+}
+
+.flex a {
+    color: whitesmoke;
+    transition: color .2s linear;
+}
+
+.flex a:hover {
+    color: wheat;
+}

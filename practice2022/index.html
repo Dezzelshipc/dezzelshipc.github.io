@@ -6,8 +6,20 @@
     <title>Summer Practice 2022 | RogUNO</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+	<style>
+		.back {
+			margin: 20px;
+		}
+		.back :is(a, a:visited) {
+			color: #18b0d4;
+		}
+		.back > a:hover {
+			color: #02f2fa;
+		}
+	</style>
   </head>
   <body style="background:black">
+	<div class="back"><a href="..">Back</a></div>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=1280 height=720></canvas>
       <div id="unity-loading-bar">

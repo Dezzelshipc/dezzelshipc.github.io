@@ -1,14 +1,39 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="ru-ru">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="css/style.css">
     <title>Dezzelshipc</title>
   </head>
   <body>
-    <ul>
-	  <li><a href="/practice2022">Practice 2022</a></li>
-	  <li><a href="https://github.com/Dezzelshipc">GitHub</a></li>
-	</ul>
+    <header>
+      <div><a href="#up"><img class="img" src="images/DezzBlank.png"/></a></div>
+      <div><a href="https://steamcommunity.com/id/dezzelshipc/"><img src="images/Steam_icon_logo.svg"></a></div>
+      <div><a href="https://github.com/Dezzelshipc"><img src="images/GitHub.png"/></a></div>
+    </header>
+    <div id="up">
+      <h1>Юрий Держапольский</h1>
+      <h2>Программист, геймер, весельчак</h2>
+      <div style="height: 20%"></div>
+      <div class="flex" id="proj">
+        <div>
+          <a href="/practice2022">Игра Roguelike, сделанная для практики.</a>
+        </div>
+        <div>
+          <a href="#there_is_nothing_here_why_did_you_click">Потом тут будет ещё что-нибудь.</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).on("scroll",function() {
+            if($(window).scrollTop() === 0)
+                $("header").removeClass("fixed");
+            else
+                $("header").attr("class","fixed");
+        });
+    </script>
   </body>
 </html>
