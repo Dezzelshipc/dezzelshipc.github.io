@@ -1,0 +1,64 @@
+table, th, td {
+    border: 1px black solid;
+    border-collapse: collapse;
+}
+
+input {
+	margin: 10px;
+	font-size: large;
+
+	min-width: 400px;
+}
+
+.input_wrapper {
+	width: auto;
+	display: flex;
+	justify-content: center;
+}
+
+td, th {
+	padding: 4px;
+}
+
+th {
+	background-color: white;
+}
+
+
+
+
+
+table.sticky-header > :not(tfoot) tr:first-child th,
+table.sticky-header > :not(tfoot) tr:nth-child(2) th,
+table.sticky-header > :not(tfoot) tr:nth-child(3) th,
+tr.sticky-header th {
+	position: -webkit-sticky;
+	position: sticky;
+	height: 2.3em; /* taller contents will override */
+	box-sizing: border-box;
+	top: -1px; /* chrome has a see-through border? */
+	border-bottom: 0;
+	z-index: 1; /* prevent maps from covering sticky header */
+}
+
+/* Move the second row of sticky headers down exactly the height of a single-line th */
+table.sticky-header > :not(tfoot) tr:nth-child(2) th {
+	top: calc(2.3em - 1px); /* due to font-size: 0.9em on tables we need +2 px on top of the calc({height}+{top}) */
+}
+
+table.sticky-header > :not(tfoot) tr:nth-child(3) th {
+	top: calc(4.6em - 1px); /* due to font-size: 0.9em on tables we need +2 px on top of the calc({height}+{top}) */
+}
+
+/* fake a bottom border - see known problems */
+table.sticky-header > :not(tfoot) tr:first-child th::after,
+table.sticky-header > :not(tfoot) tr:nth-child(2) th::after,
+table.sticky-header > :not(tfoot) tr:nth-child(3) th::after,
+tr.sticky-header th::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -1px; /* merge into existing border */
+	width: 100%;
+	border-bottom: 1px solid black;
+}
