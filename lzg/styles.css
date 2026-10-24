@@ -1,0 +1,36 @@
+:root {
+    --text-color: #111;
+    --body-main: #eee;
+    --body-border: #463a3a;
+}
+
+html {
+    background: var(--body-main);
+    color: var(--text-color);
+    font-family: sans-serif;
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+table {
+    color: var(--text-color);
+    border-color: var(--body-border);
+    box-shadow: 0 0.25rem 0.35rem -0.25rem rgba(0,0,0,0.1);
+
+    margin: 1em 0;
+    border-collapse: collapse;
+}
+
+th {
+    background: #aaa;
+    border: 1px solid var(--body-border);
+    text-align: center;
+    padding: 0.3em 0.6em;
+}
+
+td {
+    border: 1px solid var(--body-border);
+    padding: 0.3em 0.6em;
+}
