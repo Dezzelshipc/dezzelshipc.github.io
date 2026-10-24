@@ -14,7 +14,7 @@
     </header>
 
     <p>
-        Здесь собрана основная информация об сборках и видео по Майнкрафту от Лазуритного гнома, которую удалось найти и
+        Здесь собрана основная информация о сборках и видео по Майнкрафту от Лазуритного гнома, которую удалось найти и
         сохранить.
     </p>
     <ul>
@@ -174,9 +174,11 @@
                 <td>
                     <a
                         href="https://github.com/Dezzelshipc/dezzelshipc.github.io/tree/main/lzg/modpacks/client152_Zhara_ver2.rar">Клиент
-                        Жара</a>
+                        Жара</a> <sup><a href="#zhara_fix">[фикс]</a></sup>
                     <br>
                     Seed: 88888888
+                    <br>
+                    (+370, +640)
                 </td>
             </tr>
             <tr>
@@ -462,6 +464,33 @@
         <li><a href="https://www.youtube.com/@CTygu9l_BocnomuHaHuu_LZG/playlists">Сохранившиеся плейлисты (Студия
                 воспоминаний LZG)</a></li>
     </ul>
+
+    <p>
+    <h3 id="zhara_fix">Фикс сборки "Жара"</h3>
+    Проблема заключается в Forestry и новой версии Java 8. Чтобы её решить в папку самой сборки (<u>.minecraft</u>)
+    нужно добавить новый файл <code>java.security</code> с текстом:
+    <pre>
+jdk.certpath.disabledAlgorithms=MD2, MD5, SHA1 jdkCA & usage TLSServer, \
+    RSA keySize < 1024, DSA keySize < 1024, EC keySize < 224, \
+    include jdk.disabled.namedCurves
+jdk.jar.disabledAlgorithms=MD2, MD5, RSA keySize < 1024, \
+    DSA keySize < 1024, \
+    include jdk.disabled.namedCurves
+    </pre>
+    После этого в параметры запуска майнкрафта добавить
+    <code>-Dfml.ignoreInvalidMinecraftCertificates=true -Djava.security.properties=java.security</code>.
+    <ul>
+        <li>Например, используя 'MagicLauncher 1.1.4': Setup → Advanced → Parameters.</li>
+    </ul>
+    После этого клиент должен запуститься.
+
+    <p>
+        Объяснение: В новых версиях Java 8 алгоритм шифрования SHA-1 не считается безопасным и не может использоваться.
+        Forestry использовал его для проверки сертификатов других модов на то, что они не были изменены. Из-за этого
+        Forestry не может идентифицировать мод и в итоге не даёт загрузится сборке. Изменения сверху разблокируют SHA-1
+        для jar файлов, чтобы сборка смогла заработать.
+    </p>
+    </p>
 
 </body>
 
